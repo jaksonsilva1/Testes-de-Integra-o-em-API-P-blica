@@ -41,7 +41,7 @@ pytest: Framework para criação e execução de testes.
 Parâmetros da API:
 
 q: Nome da cidade.
-appid: Chave de autenticação (obtida da variável de ambiente ou substituída no código).
+appid: Chave de autenticação.
 units: Unidade de medida (metric para Celsius).
 ## Observações
 Limites de Requisições:
