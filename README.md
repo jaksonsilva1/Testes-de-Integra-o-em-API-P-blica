@@ -48,6 +48,6 @@ Limites de Requisições:
 A API gratuita do OpenWeatherMap possui limites de requisições por minuto. Use-a com moderação para evitar bloqueios.
 Segurança da API Key:
 Não inclua sua chave diretamente no código. Utilize variáveis de ambiente sempre que possível.
-📖 Referências
+## Referências
 Documentação da API do OpenWeatherMap
 Guia de Uso do Pytest
