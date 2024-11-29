@@ -10,34 +10,29 @@ Este projeto realiza testes de integração na API pública OpenWeatherMap, que 
    ```bash
    pip install pytest requests
 4. executar teste python -m pytest -v
-
-
-🚀 Como executar os testes
-Clone ou baixe este repositório.
-Navegue até a pasta do projeto.
-Execute os testes com o comando:
-bash
-Copiar código
-pytest nome_do_arquivo.py
 🧪 Testes Implementados
-test_get_weather_success:
-
-Verifica se a API retorna o status 200 para uma cidade válida (Manaus).
-Valida que os campos principais (main e temp) estão presentes na resposta.
-test_get_weather_invalid_city:
-
-Testa o comportamento da API para uma cidade inexistente (CidadeInexistente).
-Espera o status 404 e a mensagem "city not found".
-test_weather_contains_coordinates:
-
-Valida que a resposta contém as coordenadas (latitude e longitude) para uma cidade válida (São Paulo).
-test_weather_temperature_range:
-
-Testa se a temperatura retornada está dentro de uma faixa plausível (-50°C a 60°C) para a cidade (Rio de Janeiro).
-test_get_weather_without_api_key:
-
-Verifica o comportamento da API ao omitir a chave de API.
-Espera o status 401 com a mensagem "Invalid API key".
+test_get_weather_success
+Objetivo: Verifica se a API retorna o status 200 para uma cidade válida (Manaus).
+Validações:
+Confirma que os campos principais (main e temp) estão presentes na resposta.
+test_get_weather_invalid_city
+Objetivo: Testa o comportamento da API para uma cidade inexistente (CidadeInexistente).
+Validações:
+Espera o status 404.
+Verifica se a mensagem retornada é "city not found".
+test_weather_contains_coordinates
+Objetivo: Valida que a resposta contém as coordenadas (latitude e longitude) para uma cidade válida (São Paulo).
+Validações:
+Garante que os campos lat e lon estão presentes na resposta.
+test_weather_temperature_range
+Objetivo: Testa se a temperatura retornada está dentro de uma faixa plausível para a cidade (Rio de Janeiro).
+Validações:
+Verifica se a temperatura está entre -50°C e 60°C.
+test_get_weather_without_api_key
+Objetivo: Verifica o comportamento da API ao omitir a chave de API.
+Validações:
+Espera o status 401.
+Confirma que a mensagem retornada contém "Invalid API key".
 🛠️ Estrutura do Código
 Bibliotecas:
 
@@ -46,10 +41,13 @@ pytest: Framework para criação e execução de testes.
 Parâmetros da API:
 
 q: Nome da cidade.
-appid: Chave de autenticação (obtida da variável de ambiente).
+appid: Chave de autenticação (obtida da variável de ambiente ou substituída no código).
 units: Unidade de medida (metric para Celsius).
 ⚠️ Observações
+Limites de Requisições:
 A API gratuita do OpenWeatherMap possui limites de requisições por minuto. Use-a com moderação para evitar bloqueios.
+Segurança da API Key:
+Não inclua sua chave diretamente no código. Utilize variáveis de ambiente sempre que possível.
 📖 Referências
 Documentação da API do OpenWeatherMap
 Guia de Uso do Pytest
