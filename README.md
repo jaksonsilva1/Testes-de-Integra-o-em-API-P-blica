@@ -50,4 +50,4 @@ Segurança da API Key:
 Não inclua sua chave diretamente no código. Utilize variáveis de ambiente sempre que possível.
 ## Referências
 Documentação da API do OpenWeatherMap
-Guia de Uso do Pytest
+
